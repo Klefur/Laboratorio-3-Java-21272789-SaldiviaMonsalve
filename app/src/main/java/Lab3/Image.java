@@ -54,4 +54,45 @@ public class Image {
     public void setCompressedColor(String compressedColor) {
         this.compressedColor = compressedColor;
     }
+    
+    public boolean isBitmap() {
+        for (int i = 0; i < (width * height); i++){
+            Pixel pix = pixs.get(i);
+            String tipo = pix.getTipo();
+            
+            if (!tipo.equals("bit"))
+                return false;
+        }
+        
+        return true;
+    }
+    
+    public boolean isPixmap() {
+        for (int i = 0; i < (width * height); i++){
+            Pixel pix = pixs.get(i);
+            String tipo = pix.getTipo();
+            
+            if (!tipo.equals("rgb"))
+                return false;
+        }
+        
+        return true;
+    }
+    
+    public boolean isHexmap() {
+        for (int i = 0; i < (width * height); i++){
+            Pixel pix = pixs.get(i);
+            String tipo = pix.getTipo();
+            
+            if (!tipo.equals("hex"))
+                return false;
+        }
+        
+        return true;
+    }
+    
+    public boolean isCompressed() {
+        return !compressedColor.equals("-1");
+    }
+    
 }
