@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Lab3;
 
-/**
- *
- * @author joaquin
- */
+import java.util.Arrays;
+
 public class Pixrgb extends Pixel {
     private int[] rgb;
 
@@ -27,14 +21,14 @@ public class Pixrgb extends Pixel {
         }
         else {
             this.rgb[1] = 255;
-        }
-        if(0<= b && b <= 255){
+        
+        }if(0<= b && b <= 255){
             this.rgb[2] = b;
         }
         else {
             this.rgb[2] = 255;
         }
-        this.tipo = "rgb";
+        setTipo("rgb");
     }
 
     public int[] getRgb() {
@@ -44,5 +38,11 @@ public class Pixrgb extends Pixel {
     public void setRgb(int[] rgb) {
         this.rgb = rgb;
     }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(rgb);
+    }
+       
     
 }

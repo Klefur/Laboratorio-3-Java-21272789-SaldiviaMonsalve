@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Lab3;
 
 import java.util.ArrayList;
+import java.util.Random;
 
-/**
- *
- * @author joaquin
- */
 public class Image {
     private int width;
     private int height;
@@ -93,6 +86,84 @@ public class Image {
     
     public boolean isCompressed() {
         return !compressedColor.equals("-1");
+    }
+    
+    public void flipH() {
+        if (!isCompressed()) {
+            for (int i = 0; i < (width * height); i++){
+                Pixel pix = pixs.get(i);
+                pix.setY(height - 1 - pix.getY());
+            }
+        }
+    }
+    
+    public void flipV() {
+        if (!isCompressed()) {
+            for (int i = 0; i < (width * height); i++){
+                Pixel pix = pixs.get(i);
+                pix.setX(width - 1 - pix.getX());
+            }
+        }
+    }
+    
+    public void crearBitmap() {
+        Random rand = new Random();
+        ArrayList<Pixel> pixeles = new ArrayList<>();
+        Pixel pix;
+        int bit, depth;
+        
+        for (int i = 0; i < width; i++){
+            for (int j = 0; j < height; j++){
+                bit = rand.nextInt(2);
+                depth = rand.nextInt(10);
+                pix = new Pixbit(i, j, bit, depth);
+                pixeles.add(pix);
+            }
+        }
+        
+        setPixs(pixeles);
+    }
+    
+    public void crearPixmap() {
+        Random rand = new Random();
+        ArrayList<Pixel> pixeles = new ArrayList<>();
+        Pixel pix;
+        int r, g, b, depth;
+        
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                r = rand.nextInt(255);
+                g = rand.nextInt(255);
+                b = rand.nextInt(255);
+                depth = rand.nextInt(10);
+                pix = new Pixrgb(i, j, r, g, b, depth);
+                pixeles.add(pix);
+            }
+        }
+        
+        setPixs(pixeles);
+    }
+    
+    public void crearHexmap() {
+        Random rand = new Random();
+        ArrayList<Pixel> pixeles = new ArrayList<>();
+        Pixel pix;
+        String hex;
+        int r, g, b, depth;
+        
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                r = rand.nextInt(255);
+                g = rand.nextInt(255);
+                b = rand.nextInt(255);
+                depth = rand.nextInt(10);
+                hex = String.format("#%02X%02X%02X", r, g, b);
+                pix = new Pixhex(i, j,hex, depth);
+                pixeles.add(pix);
+            }
+        }
+        
+        setPixs(pixeles);
     }
     
 }

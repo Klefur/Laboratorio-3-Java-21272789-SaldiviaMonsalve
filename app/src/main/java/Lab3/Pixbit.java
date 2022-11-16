@@ -1,16 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Lab3;
 
-/**
- *
- * @author joaquin
- */
 public class Pixbit extends Pixel{
     private int bit;
-
+    
+    public Pixbit(int x, int y) {
+        super(x,y);
+    }
+    
     public Pixbit(int x, int y, int bit, int depth) {
         super(x, y, depth);
         if (bit == 0) {
@@ -19,7 +15,7 @@ public class Pixbit extends Pixel{
         else {
             this.bit = 1;
         }
-        this.tipo = "bit";
+        setTipo("bit");
     }
     
     public int getBit() {
@@ -28,5 +24,10 @@ public class Pixbit extends Pixel{
     
     public void setBit(int bit) {
         this.bit = bit;
-    }    
+    }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(bit);
+    }
 }

@@ -5,6 +5,11 @@ package Lab3;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Image img = new Image(2,2);
+        img.crearBitmap();
+        img.crearHexmap();
+        img.crearPixmap();
+        img.flipH();
+        img.flipV();
     }
 }

@@ -1,19 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Lab3;
 
-/**
- *
- * @author joaquin
- */
-public class Pixel {
-    protected int x;
-    protected int y;
-    protected int depth;
-    protected String tipo;
-
+public abstract class Pixel {
+    private int x;
+    private int y;
+    private int depth;
+    private String tipo;
+    
+    public Pixel(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
     public Pixel(int x, int y, int depth) {
         this.x = x;
         this.y = y;
@@ -47,4 +44,12 @@ public class Pixel {
     public String getTipo() {
         return tipo;
     }
+    
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+    @Override
+    public abstract String toString();
+    
 }
