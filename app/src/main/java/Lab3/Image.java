@@ -106,6 +106,28 @@ public class Image {
         }
     }
     
+    public void crop(int x1, int y1, int x2, int y2) {
+        if (!isCompressed()){
+            Pixel pix;
+            int x, y;
+            
+            for (int i = 0; i < (width * height); i++){
+                pix = pixs.get(i);
+                x = pix.getX(); 
+                y = pix.getY();
+                
+                if (x1 <= x && x <= x2){
+                    if (y1 <= y && y <= y2){
+                        pix.setX(x - x1);
+                        pix.setY(y - y1);
+                    }
+                }
+            }
+            setWidth(x2 - x1 + 1);
+            setHeight(y2 - y1 + 1);
+        }
+    }
+    
     public void crearBitmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
