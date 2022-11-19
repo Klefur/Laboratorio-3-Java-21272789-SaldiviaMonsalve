@@ -11,5 +11,6 @@ public class App {
         img.crearPixmap();
         img.flipH();
         img.flipV();
+        img.rgbToHex();
     }
 }

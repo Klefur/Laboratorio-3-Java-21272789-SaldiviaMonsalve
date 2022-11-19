@@ -146,6 +146,25 @@ public class Image {
         setPixs(pixeles);
     }
     
+    public void rgbToHex() {
+        if (isPixmap() && !isCompressed()) {
+            ArrayList<Pixel> pixsHex = new ArrayList<>();
+            Pixrgb p;
+            Pixhex pix;
+            String hex;
+            int[] rgb;
+            
+            for (int i = 0; i < (width * height); i++) {
+                p = (Pixrgb) pixs.get(i);
+                rgb = p.getRgb();
+                hex = String.format("#%02X%02X%02X", rgb[0], rgb[1], rgb[2]);
+                pix = new Pixhex(p.getX(), p.getY(), hex, p.getDepth());
+                pixsHex.add(pix);
+            }
+            setPixs(pixsHex);
+        }
+    }
+    
     public void crearPixmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
