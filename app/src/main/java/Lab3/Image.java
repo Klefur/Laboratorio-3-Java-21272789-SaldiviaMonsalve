@@ -128,6 +128,24 @@ public class Image {
         }
     }
     
+    public Histograma histogram() {
+        if (!isCompressed()){
+            Histograma histo = new Histograma();
+            
+            if (isBitmap()){
+                histo.histogramaBit(pixs);
+            }
+            if (isBitmap()){
+                histo.histogramaBit(pixs);
+            }
+            if (isBitmap()){
+                histo.histogramaBit(pixs);
+            }
+            return histo;
+        }
+        return null;
+    }
+    
     public void crearBitmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
