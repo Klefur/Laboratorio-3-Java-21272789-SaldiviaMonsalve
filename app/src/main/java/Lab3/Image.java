@@ -165,6 +165,66 @@ public class Image {
         }
     }
     
+    public void rotate90(){
+        if (!isCompressed()){
+            int aux;
+
+            for (Pixel pix : pixs) {
+                aux = pix.getY();
+                pix.setY(pix.getX());
+                pix.setX(height - 1 - aux);
+            }
+            aux = width;
+            width = height;
+            height = aux;
+        }
+    }
+    
+    public void compress(){
+        if (!isCompressed()){
+            Histograma histo = histogram();
+            ArrayList<Pixel> pixs2 = new ArrayList<>();
+            
+            if (isBitmap()){
+                Pixbit pBit;
+                int colorBit = histo.getMasRepetidoBit();
+                for (Pixel pix : pixs) {
+                    pBit = (Pixbit) pix;
+                    if (pBit.getBit() != colorBit){
+                        pixs2.add(pBit);
+                    }
+                }
+                setPixs(pixs2);
+                setCompressedColor(String.valueOf(colorBit));
+            }
+            if (isPixmap()){
+                Pixrgb pRgb;
+                int[] colorRgb = histo.getMasRepetidoRGB();
+                for (Pixel pix : pixs) {
+                    pRgb = (Pixrgb) pix;
+                    if (pRgb.getRgb() != colorRgb){
+                        pixs2.add(pRgb);
+                    }
+                }
+                setPixs(pixs2);
+                setCompressedColor(String.valueOf(colorRgb[0] + "," + colorRgb[1] + "," + colorRgb[2]));
+            }
+            if (isHexmap()){
+                Pixhex pHex;
+                String colorHex = histo.getMasRepetidoHex();
+                for (Pixel pix : pixs) {
+                    pHex = (Pixhex) pix;
+                    if (!pHex.getHex().equals(colorHex)){
+                        pixs2.add(pHex);
+                    }
+                }
+                setPixs(pixs2);
+                setCompressedColor(colorHex); 
+            } else {
+            }
+        }
+    }
+    
     public void crearBitmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
