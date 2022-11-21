@@ -31,7 +31,7 @@ public class Histograma {
     
     public void histogramaBit(ArrayList<Pixel> pixs) {
         Pixbit p, pAux;
-        int contAux = 0;
+        int contAux;
         for (int i = 0; i < pixs.size(); i++) {
             p = (Pixbit) pixs.get(i);
             contAux = 0;
@@ -50,7 +50,7 @@ public class Histograma {
     
     public void histogramaRGB(ArrayList<Pixel> pixs) {
         Pixrgb p, pAux;
-        int contAux = 0;
+        int contAux;
         for (int i = 0; i < pixs.size(); i++) {
             p = (Pixrgb) pixs.get(i);
             contAux = 0;
@@ -69,7 +69,7 @@ public class Histograma {
     
     public void histogramaHex(ArrayList<Pixel> pixs) {
         Pixhex p, pAux;
-        int contAux = 0;
+        int contAux;
         for (int i = 0; i < pixs.size(); i++) {
             p = (Pixhex) pixs.get(i);
             contAux = 0;

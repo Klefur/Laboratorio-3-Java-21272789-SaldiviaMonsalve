@@ -146,24 +146,6 @@ public class Image {
         return null;
     }
     
-    public void crearBitmap() {
-        Random rand = new Random();
-        ArrayList<Pixel> pixeles = new ArrayList<>();
-        Pixel pix;
-        int bit, depth;
-        
-        for (int i = 0; i < width; i++){
-            for (int j = 0; j < height; j++){
-                bit = rand.nextInt(2);
-                depth = rand.nextInt(10);
-                pix = new Pixbit(i, j, bit, depth);
-                pixeles.add(pix);
-            }
-        }
-        
-        setPixs(pixeles);
-    }
-    
     public void rgbToHex() {
         if (isPixmap() && !isCompressed()) {
             ArrayList<Pixel> pixsHex = new ArrayList<>();
@@ -181,6 +163,24 @@ public class Image {
             }
             setPixs(pixsHex);
         }
+    }
+    
+    public void crearBitmap() {
+        Random rand = new Random();
+        ArrayList<Pixel> pixeles = new ArrayList<>();
+        Pixel pix;
+        int bit, depth;
+        
+        for (int i = 0; i < width; i++){
+            for (int j = 0; j < height; j++){
+                bit = rand.nextInt(2);
+                depth = rand.nextInt(10);
+                pix = new Pixbit(i, j, bit, depth);
+                pixeles.add(pix);
+            }
+        }
+        
+        setPixs(pixeles);
     }
     
     public void crearPixmap() {
