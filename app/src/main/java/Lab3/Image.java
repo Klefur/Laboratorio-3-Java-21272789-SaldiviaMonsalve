@@ -225,6 +225,16 @@ public class Image {
         }
     }
     
+    public void invertColorBit(){
+        if (!isCompressed() && isBitmap()){
+            Pixbit pAux;
+            for (Pixel pix: pixs) {
+                pAux = (Pixbit) pix;
+                pAux.setBit(1 - pAux.getBit());
+            }
+        }
+    }
+    
     public void crearBitmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
