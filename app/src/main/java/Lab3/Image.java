@@ -235,6 +235,21 @@ public class Image {
         }
     }
     
+    public void invertColorRGB(){
+        if (!isCompressed() && isPixmap()){
+            Pixrgb pAux;
+            int[] rgb;
+            for (Pixel pix: pixs) {
+                pAux = (Pixrgb) pix;
+                rgb = pAux.getRgb();
+                rgb[0] = 255 - rgb[0];
+                rgb[1] = 255 - rgb[1];
+                rgb[2] = 255 - rgb[2];
+                pAux.setRgb(rgb);
+            }
+        }
+    }
+    
     public void crearBitmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
