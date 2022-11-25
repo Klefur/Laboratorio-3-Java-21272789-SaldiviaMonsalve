@@ -1,6 +1,7 @@
 package Lab3;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Image {
@@ -250,6 +251,25 @@ public class Image {
         }
     }
     
+    public String imgToString(){
+        if (!isCompressed()){
+            String str = "";
+            int cont = 0;
+            Pixel pix;
+            sortPixs(pixs);
+            for (int i = 0; i < height; i++){
+                for (int j = 0; j < width; j++) {
+                    pix = pixs.get(cont);
+                    str = str + pix.toString() + " ";
+                    cont++;
+                }
+                str += "\n";
+            }
+            return str;
+        }
+        return null;
+    }
+    
     public void crearBitmap() {
         Random rand = new Random();
         ArrayList<Pixel> pixeles = new ArrayList<>();
@@ -308,6 +328,14 @@ public class Image {
         }
         
         setPixs(pixeles);
+    }
+    
+    public void sortPixs(ArrayList<Pixel> pixs) {
+        Collections.sort(pixs, (Pixel p, Pixel p2) -> Integer.valueOf((10*p.getY()) + p.getX()).compareTo((10*p2.getY()) + p2.getX()));
+    }
+    
+    public void sortDepth(ArrayList<Pixel> pixs){
+        Collections.sort(pixs, (Pixel p, Pixel p2) -> Integer.valueOf(p.getDepth()).compareTo(p2.getDepth()));
     }
     
 }
