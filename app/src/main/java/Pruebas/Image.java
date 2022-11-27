@@ -1,9 +1,14 @@
- package Pruebas;
+package Pruebas;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+/**
+ * Clase que represanta una imagen, se compone de largo y ancho int, pixeles de
+ * tipo ArrayList de Pixel y un color comprimido String
+ * @version 11.0.17
+ */
 public class Image implements ImageIn{
     private int width;
     private int height;
@@ -16,39 +21,75 @@ public class Image implements ImageIn{
         this.pixs = pixs;
         this.compressedColor = "-1";
     }
-
+    
+    /**
+     * Obtiene el ancho de una imagen
+     * @return int
+     */
     public int getWidth() {
         return width;
     }
-
+    
+    /**
+     * Modifica el ancho de una imagen
+     * @param width (int)
+     */
     public void setWidth(int width) {
         this.width = width;
     }
-
+    
+    /**
+     * Obtiene el alto de una imagen
+     * @return int
+     */
     public int getHeight() {
         return height;
     }
-
+    
+    /**
+     * Modifica el alto de una imagen
+     * @param height (int)
+     */
     public void setHeight(int height) {
         this.height = height;
     }
-
+    
+    /**
+     * Obtiene los pixeles de una imagen
+     * @return ArrayList Pixel
+     */
     public ArrayList<Pixel> getPixs() {
         return pixs;
     }
-
+    
+    /**
+     * Modifica los pixeles de una imagen
+     * @param pixs (ArrayList Pixel)
+     */
     public void setPixs(ArrayList<Pixel> pixs) {
         this.pixs = pixs;
     }
-
+    
+    /**
+     * Obtiene el color comprimido de una imagen
+     * @return String
+     */
     public String getCompressedColor() {
         return compressedColor;
     }
-
+    
+    /**
+     * Modifica el color comprimido de una imagen
+     * @param compressedColor (String)
+     */
     public void setCompressedColor(String compressedColor) {
         this.compressedColor = compressedColor;
     }
     
+    /**
+     * Verifica si la imagen es de tipo Bitmap
+     * @return Boolean
+     */
     @Override
     public boolean isBitmap() {
         for (int i = 0; i < (width * height); i++){
@@ -62,6 +103,10 @@ public class Image implements ImageIn{
         return true;
     }
     
+    /**
+     * Verifica si la imagen es de tipo Pixmap
+     * @return Boolean
+     */
     @Override
     public boolean isPixmap() {
         for (int i = 0; i < (width * height); i++){
@@ -75,6 +120,10 @@ public class Image implements ImageIn{
         return true;
     }
     
+    /**
+     * Verifica si la imagen es de tipo Hexmap
+     * @return Boolean
+     */
     @Override
     public boolean isHexmap() {
         for (int i = 0; i < (width * height); i++){
@@ -88,11 +137,18 @@ public class Image implements ImageIn{
         return true;
     }
     
+    /**
+     * Verifica si la imagen esta comprimida
+     * @return Boolean
+     */
     @Override
     public boolean isCompressed() {
         return !compressedColor.equals("-1");
     }
     
+    /**
+     * Voltea la imagen horizontalmente
+     */
     @Override
     public void flipH() {
         if (!isCompressed()) {
@@ -103,6 +159,9 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Voltea la imagen verticalmente
+     */
     @Override
     public void flipV() {
         if (!isCompressed()) {
@@ -113,6 +172,13 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Recorta una imagen dados 2 puntos x e y
+     * @param x1 (int)
+     * @param y1 (int)
+     * @param x2 (int)
+     * @param y2 (int)
+     */
     @Override
     public void crop(int x1, int y1, int x2, int y2) {
         if (!isCompressed()){
@@ -136,6 +202,9 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Transforma una imagen Pixmap a Hexmap
+     */
     @Override
     public void rgbToHex() {
         if (isPixmap() && !isCompressed()) {
@@ -156,6 +225,10 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * obtiene el color mas repetido de una imagen
+     * @return Histograma
+     */
     @Override
     public Histograma histogram() {
         if (!isCompressed()){
@@ -175,6 +248,9 @@ public class Image implements ImageIn{
         return null;
     }
     
+    /**
+     * rota una imagen 90 grados en sentido horario
+     */
     @Override
     public void rotate90(){
         if (!isCompressed()){
@@ -191,6 +267,9 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * comprime la imagen en base al color mas repetido
+     */
     @Override
     public void compress(){
         if (!isCompressed()){
@@ -237,6 +316,10 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Se recibe un pixel y se cambia por el que tenga la misma posicion
+     * @param pMod (Pixel)
+     */
     @Override
     public void changePixel(Pixel pMod){
         if (!isCompressed()){
@@ -253,6 +336,9 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Invierte los colores de bit en un imagen Bitmap
+     */
     @Override
     public void invertColorBit(){
         if (!isCompressed() && isBitmap()){
@@ -264,6 +350,9 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Invierte los colores de rgb en un imagen Pixmap
+     */
     @Override
     public void invertColorRGB(){
         if (!isCompressed() && isPixmap()){
@@ -280,6 +369,10 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Convierte una imagen a string
+     * @return String
+     */
     @Override
     public String imgToString(){
         if (!isCompressed()){
@@ -300,6 +393,11 @@ public class Image implements ImageIn{
         return null;
     }
     
+    /**
+     * Por cada profundidad diferente en la imagen se crea una imagen con
+     * profundidad homogenea
+     * @return ArrayList Image
+     */
     @Override
     public ArrayList<Image> depthLayers(){
         if (!isCompressed()){
@@ -476,6 +574,10 @@ public class Image implements ImageIn{
         return null;
     }
     
+    /**
+     * Se toma el color comprimido y se completa la imagen en base a ese color
+     * perdiendo la informacion de profundidad
+     */
     @Override
     public void decompress(){
         if (isCompressed()){
@@ -550,6 +652,9 @@ public class Image implements ImageIn{
         }
     }
     
+    /**
+     * Genera una imagen aleatorea de tipo Bitmap
+     */
     @Override
     public void crearBitmap() {
         Random rand = new Random();
@@ -569,6 +674,9 @@ public class Image implements ImageIn{
         setPixs(pixeles);
     }
     
+    /**
+     * Genera una imagen aleatorea de tipo Pixmap
+     */
     @Override
     public void crearPixmap() {
         Random rand = new Random();
@@ -590,6 +698,9 @@ public class Image implements ImageIn{
         setPixs(pixeles);
     }
     
+    /**
+     * Genera una imagen aleatorea de tipo Hexmap
+     */
     @Override
     public void crearHexmap() {
         Random rand = new Random();
@@ -613,11 +724,19 @@ public class Image implements ImageIn{
         setPixs(pixeles);
     }
     
+    /**
+     * Ordena una lista de pixeles por ancho y luego por largo
+     * @param pixs (ArrayList Pixel)
+     */
     @Override
     public void sortPixs(ArrayList<Pixel> pixs) {
         Collections.sort(pixs, (Pixel p, Pixel p2) -> Integer.valueOf((10*p.getY()) + p.getX()).compareTo((10*p2.getY()) + p2.getX()));
     }
     
+    /**
+     * Ordena una lista de pixeles por profundidad
+     * @param pixs (ArrayList Pixel)
+     */
     @Override
     public void sortDepth(ArrayList<Pixel> pixs){
         Collections.sort(pixs, (Pixel p, Pixel p2) -> Integer.valueOf(p.getDepth()).compareTo(p2.getDepth()));
