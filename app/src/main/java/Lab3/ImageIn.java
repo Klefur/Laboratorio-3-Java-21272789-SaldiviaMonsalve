@@ -1,4 +1,4 @@
-package Pruebas;
+package Lab3;
 
 import java.util.ArrayList;
 

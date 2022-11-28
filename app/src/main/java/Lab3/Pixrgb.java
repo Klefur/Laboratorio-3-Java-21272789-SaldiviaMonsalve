@@ -31,14 +31,26 @@ public class Pixrgb extends Pixel {
         setTipo("rgb");
     }
 
+    /**
+     * Getter de rgb
+     * @return rgb (int[])
+     */
     public int[] getRgb() {
         return rgb;
     }
 
+    /**
+     *
+     * @param rgb (int[])
+     */
     public void setRgb(int[] rgb) {
         this.rgb = rgb;
     }
-
+    
+    /**
+     * Transforma Pixrgb a String
+     * @return String
+     */
     @Override
     public String toString() {
         return Arrays.toString(rgb);

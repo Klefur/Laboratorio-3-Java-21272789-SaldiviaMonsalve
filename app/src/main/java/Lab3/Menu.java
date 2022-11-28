@@ -1,4 +1,4 @@
-package Pruebas;
+package Lab3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -309,21 +309,21 @@ public class Menu {
         
         switch (opcion) {
             case 1:
-                System.out.println(imagen.isBitmap());
+                System.out.println(imagen.isBitmap() + "\n");
                 break;
             case 2:
-                System.out.println(imagen.isPixmap());
+                System.out.println(imagen.isPixmap() + "\n");
                 break;
             case 3:
-                System.out.println(imagen.isHexmap());
+                System.out.println(imagen.isHexmap() + "\n");
                 break;
             case 4:
                 imagen.flipH();
-                System.out.println("flipH aplicado");
+                System.out.println("flipH aplicado" + "\n");
                 break;
             case 5:
                 imagen.flipV();
-                System.out.println("flipV aplicado");
+                System.out.println("flipV aplicado" + "\n");
                 break;
             case 6:
                 int x1, y1, x2, y2;
@@ -341,7 +341,7 @@ public class Menu {
                 y2 = input.nextInt();
                 
                 imagen.crop(x1,y1,x2,y2);
-                System.out.println("crop aplicado");
+                System.out.println("crop aplicado" + "\n");
                 break;
             case 7: 
                 histo = imagen.histogram();
@@ -359,9 +359,11 @@ public class Menu {
                 }
             case 8: 
                 imagen.rotate90();
+                System.out.println("rotate90 aplicado" + "\n");
                 break;
             case 9:
                 imagen.compress();
+                System.out.println("compress aplicado" + "\n");
                 break;
             case 10:
                 int x, y, bit, depth, r, g, b;
@@ -378,7 +380,7 @@ public class Menu {
                         depth = input.nextInt();
                         imagen.changePixel(new Pixbit(x, y ,bit, depth));
                 }
-                if(imagen.isBitmap()){
+                if(imagen.isPixmap()){
                     System.out.print("Ingrese R: ");
                     r = input.nextInt();
                     System.out.print("Ingrese G: ");
@@ -389,28 +391,33 @@ public class Menu {
                     depth = input.nextInt();
                     imagen.changePixel(new Pixrgb(x, y , r, g, b, depth));
                 }
-                if(imagen.isBitmap()){
+                if(imagen.isHexmap()){
                     System.out.print("Ingrese Hex: ");
                     hex = input.nextLine();
                     System.out.print("Ingrese Profundidad: ");
                     depth = input.nextInt();
                     imagen.changePixel(new Pixhex(x, y ,hex, depth));
                 }
+                System.out.println("changePixel aplicado" + "\n");
                 break;
             case 11:
                 imagen.invertColorBit();
+                System.out.println("inverColorBit aplicado" + "\n");
                 break;
             case 12:
                 imagen.invertColorRGB();
+                System.out.println("inverColorRGB aplicado" + "\n");
                 break;
             case 13:
                 imageList = imagen.depthLayers();
                 for (Image imgAux: imageList){
                     System.out.println(imgAux.imgToString());
-                } 
+                }
+                System.out.println("\ndepthLayers aplicado" + "\n");
                 break;
             case 14:
                 imagen.decompress();
+                System.out.println("decompress aplicado" + "\n");
                 break;
             case 15:
                 inicio();

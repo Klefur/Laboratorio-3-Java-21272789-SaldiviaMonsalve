@@ -9,14 +9,26 @@ public class Pixhex extends Pixel{
         setTipo("hex");
     }
 
+    /**
+     * Getter de hex
+     * @return hex (String)
+     */
     public String getHex() {
         return hex;
     }
 
+    /**
+     * Setter de hex
+     * @param hex (String)
+     */
     public void setHex(String hex) {
         this.hex = hex;
     }
-
+    
+    /**
+     * Transforma Pixhex a String
+     * @return String
+     */
     @Override
     public String toString() {
         return hex;
