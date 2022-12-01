@@ -1,5 +1,11 @@
 package Lab3;
 
+/**
+ * Clase que representa un Pixel, compuesto de 3 int y 1 String
+ * @author joaquin
+ * @version 11.0.17
+ * @author joaquin
+ */
 public abstract class Pixel {
     private int x;
     private int y;

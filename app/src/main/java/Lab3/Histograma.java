@@ -3,6 +3,11 @@ package Lab3;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Clase que representa el histograma, se compone de 3 int, 1 int[] y 1 String
+ * @author joaquin
+ * @version 11.0.17
+ */
 public class Histograma {
     private int masRepetidoBit;
     private int[] masRepetidoRGB;

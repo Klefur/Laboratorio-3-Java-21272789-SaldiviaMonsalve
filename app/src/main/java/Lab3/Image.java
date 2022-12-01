@@ -7,6 +7,7 @@ import java.util.Random;
 /**
  * Clase que represanta una imagen, se compone de largo y ancho int, pixeles de
  * tipo ArrayList de Pixel y un color comprimido String
+ * @author joaquin
  * @version 11.0.17
  */
 public class Image implements ImageIn{

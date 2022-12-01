@@ -4,18 +4,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un menu, se compone de 1 Scanner, 1 boolean, 1 Image,
+ * 1 int
+ * @author joaquin
+ * @version 11.0.17
+ */
 public class Menu {
     private final Scanner input;
     private boolean on;
     private int opcion;
     private Image imagen;
-    private Histograma histo;
-    private ArrayList<Image> imageList;
 
     public Menu() {
         this.input = new Scanner(System.in);
         this.on = true;
         this.opcion = 0;
+        this.imagen = new Image(5, 4, new ArrayList<>());
+        this.imagen.crearBitmap();
     }
 
     /**
@@ -370,7 +376,7 @@ public class Menu {
                 System.out.println("crop aplicado" + "\n");
                 break;
             case 7: 
-                histo = imagen.histogram();
+                Histograma histo = imagen.histogram();
                 if(imagen.isBitmap()){
                         System.out.print("El color mas repetido es: " + histo.getMasRepetidoBit());
                         System.out.println(" y se repetite: " + histo.getCont() + " Veces\n");
@@ -435,7 +441,7 @@ public class Menu {
                 System.out.println("inverColorRGB aplicado" + "\n");
                 break;
             case 13:
-                imageList = imagen.depthLayers();
+                ArrayList<Image> imageList = imagen.depthLayers();
                 for (Image imgAux: imageList){
                     System.out.println(imgAux.imgToString());
                 }

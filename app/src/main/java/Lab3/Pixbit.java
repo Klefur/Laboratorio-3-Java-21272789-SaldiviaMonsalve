@@ -1,5 +1,10 @@
 package Lab3;
 
+/**
+ * Clase que representa un Pixbit, compuesto de 4 int y 1 String
+ * @author joaquin
+ * @version 11.0.17
+ */
 public class Pixbit extends Pixel{
     private int bit;
     

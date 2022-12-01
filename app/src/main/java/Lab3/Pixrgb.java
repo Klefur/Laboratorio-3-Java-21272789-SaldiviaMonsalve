@@ -2,6 +2,12 @@ package Lab3;
 
 import java.util.Arrays;
 
+/**
+ * Clase que representa un Pixrgb, compuesto de 3 int, 1 int[] y 1 String
+ * @author joaquin
+ * @version 11.0.17
+ * @author joaquin
+ */
 public class Pixrgb extends Pixel {
     private int[] rgb;
 
