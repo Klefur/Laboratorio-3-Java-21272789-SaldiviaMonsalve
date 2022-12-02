@@ -2,7 +2,7 @@ package Lab3;
 
 import java.util.ArrayList;
 
-public interface ImageIn {
+public interface ImageIn_21272789_SaldiviaMonsalve {
     
     boolean isBitmap();
     
@@ -20,13 +20,13 @@ public interface ImageIn {
     
     void rgbToHex();
     
-    Histograma histogram();
+    Histograma_21272789_SaldiviaMonsalve histogram();
     
     void rotate90();
     
     void compress();
 
-    void changePixel(Pixel pMod);
+    void changePixel(Pixel_21272789_SaldiviaMonsalve pMod);
 
     void invertColorBit();
 
@@ -34,7 +34,7 @@ public interface ImageIn {
 
     String imgToString();
 
-    ArrayList<Image> depthLayers();
+    ArrayList<Image_21272789_SaldiviaMonsalve> depthLayers();
 
     void decompress();
 
@@ -44,7 +44,7 @@ public interface ImageIn {
 
     void crearHexmap();
     
-    void sortPixs(ArrayList<Pixel> pixs);
+    void sortPixs(ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs);
     
-    void sortDepth(ArrayList<Pixel> pixs);
+    void sortDepth(ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs);
 }

@@ -8,10 +8,10 @@ import java.util.Arrays;
  * @version 11.0.17
  * @author joaquin
  */
-public class Pixrgb extends Pixel {
+public class Pixrgb_21272789_SaldiviaMonsalve extends Pixel_21272789_SaldiviaMonsalve {
     private int[] rgb;
 
-    public Pixrgb(int x, int y,int r, int g, int b, int depth) {
+    public Pixrgb_21272789_SaldiviaMonsalve(int x, int y,int r, int g, int b, int depth) {
         super(x, y, depth);
         this.rgb = new int[3];
         

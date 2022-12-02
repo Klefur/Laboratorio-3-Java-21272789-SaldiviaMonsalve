@@ -30,7 +30,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'Lab3.App'
+    mainClass = 'Lab3.App_21272789_SaldiviaMonsalve'
 }
 
 tasks.named('test') {

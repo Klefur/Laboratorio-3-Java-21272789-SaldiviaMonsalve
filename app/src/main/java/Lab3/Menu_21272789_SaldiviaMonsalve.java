@@ -10,17 +10,17 @@ import java.util.Scanner;
  * @author joaquin
  * @version 11.0.17
  */
-public class Menu {
-    private final Scanner input;
+public class Menu_21272789_SaldiviaMonsalve {
+    private Scanner input;
     private boolean on;
     private int opcion;
-    private Image imagen;
+    private Image_21272789_SaldiviaMonsalve imagen;
 
-    public Menu() {
+    public Menu_21272789_SaldiviaMonsalve() {
         this.input = new Scanner(System.in);
         this.on = true;
         this.opcion = 0;
-        this.imagen = new Image(5, 4, new ArrayList<>());
+        this.imagen = new Image_21272789_SaldiviaMonsalve(5, 4, new ArrayList<>());
         this.imagen.crearBitmap();
     }
 
@@ -117,7 +117,7 @@ public class Menu {
             System.out.print(largo);
             l = input.nextInt();
             System.out.println("");
-            imagen = new Image(w, l, new ArrayList<>());
+            imagen = new Image_21272789_SaldiviaMonsalve(w, l, new ArrayList<>());
         }
         
         switch (opcion) {
@@ -157,8 +157,8 @@ public class Menu {
         
         switch (opcion) {
             case 1:
-                ArrayList<Pixel> pixs = new ArrayList<>();
-                Pixel pix;
+                ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs = new ArrayList<>();
+                Pixel_21272789_SaldiviaMonsalve pix;
                 String pixel = "pixbit ";
                 String posX = "Ingresar X: ";
                 String posY = "Ingresar Y: ";
@@ -177,7 +177,7 @@ public class Menu {
                         System.out.print(depth);
                         d = input.nextInt();
                         System.out.println();
-                        pix = new Pixbit(x, y, bit, d);
+                        pix = new Pixbit_21272789_SaldiviaMonsalve(x, y, bit, d);
                         pixs.add(pix);
                 }
                 
@@ -212,8 +212,8 @@ public class Menu {
         
         switch (opcion) {
             case 1:
-                ArrayList<Pixel> pixs = new ArrayList<>();
-                Pixel pix;
+                ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs = new ArrayList<>();
+                Pixel_21272789_SaldiviaMonsalve pix;
                 String pixel = "pixrgb ";
                 String posX = "Ingresar X: ";
                 String posY = "Ingresar Y: ";
@@ -238,7 +238,7 @@ public class Menu {
                         System.out.print(depth);
                         d = input.nextInt();
                         System.out.println();
-                        pix = new Pixrgb(x, y, r, g, b, d);
+                        pix = new Pixrgb_21272789_SaldiviaMonsalve(x, y, r, g, b, d);
                         pixs.add(pix);
                 }
                 
@@ -273,8 +273,8 @@ public class Menu {
         
         switch (opcion) {
             case 1:
-                ArrayList<Pixel> pixs = new ArrayList<>();
-                Pixel pix;
+                ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs = new ArrayList<>();
+                Pixel_21272789_SaldiviaMonsalve pix;
                 String pixel = "pixhex ";
                 String posX = "Ingresar X: ";
                 String posY = "Ingresar Y: ";
@@ -293,7 +293,7 @@ public class Menu {
                         hex = input.nextLine();
                         System.out.print(depth);
                         d = input.nextInt();
-                        pix = new Pixhex(x, y, hex, d);
+                        pix = new Pixhex_21272789_SaldiviaMonsalve(x, y, hex, d);
                         pixs.add(pix);
                 }
                 
@@ -376,7 +376,7 @@ public class Menu {
                 System.out.println("crop aplicado" + "\n");
                 break;
             case 7: 
-                Histograma histo = imagen.histogram();
+                Histograma_21272789_SaldiviaMonsalve histo = imagen.histogram();
                 if(imagen.isBitmap()){
                         System.out.print("El color mas repetido es: " + histo.getMasRepetidoBit());
                         System.out.println(" y se repetite: " + histo.getCont() + " Veces\n");
@@ -410,7 +410,7 @@ public class Menu {
                         bit = input.nextInt();
                         System.out.print("Ingrese Profundidad: ");
                         depth = input.nextInt();
-                        imagen.changePixel(new Pixbit(x, y ,bit, depth));
+                        imagen.changePixel(new Pixbit_21272789_SaldiviaMonsalve(x, y ,bit, depth));
                 }
                 if(imagen.isPixmap()){
                     System.out.print("Ingrese R: ");
@@ -421,14 +421,14 @@ public class Menu {
                     b = input.nextInt();
                     System.out.print("Ingrese Profundidad: ");
                     depth = input.nextInt();
-                    imagen.changePixel(new Pixrgb(x, y , r, g, b, depth));
+                    imagen.changePixel(new Pixrgb_21272789_SaldiviaMonsalve(x, y , r, g, b, depth));
                 }
                 if(imagen.isHexmap()){
                     System.out.print("Ingrese Hex: ");
                     hex = input.nextLine();
                     System.out.print("Ingrese Profundidad: ");
                     depth = input.nextInt();
-                    imagen.changePixel(new Pixhex(x, y ,hex, depth));
+                    imagen.changePixel(new Pixhex_21272789_SaldiviaMonsalve(x, y ,hex, depth));
                 }
                 System.out.println("changePixel aplicado" + "\n");
                 break;
@@ -441,8 +441,8 @@ public class Menu {
                 System.out.println("inverColorRGB aplicado" + "\n");
                 break;
             case 13:
-                ArrayList<Image> imageList = imagen.depthLayers();
-                for (Image imgAux: imageList){
+                ArrayList<Image_21272789_SaldiviaMonsalve> imageList = imagen.depthLayers();
+                for (Image_21272789_SaldiviaMonsalve imgAux: imageList){
                     System.out.println(imgAux.imgToString());
                 }
                 System.out.println("\ndepthLayers aplicado" + "\n");

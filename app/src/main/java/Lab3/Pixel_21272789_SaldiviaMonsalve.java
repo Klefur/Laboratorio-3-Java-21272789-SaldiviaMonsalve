@@ -6,13 +6,13 @@ package Lab3;
  * @version 11.0.17
  * @author joaquin
  */
-public abstract class Pixel {
+public abstract class Pixel_21272789_SaldiviaMonsalve {
     private int x;
     private int y;
     private int depth;
     private String tipo;
     
-    public Pixel(int x, int y, int depth) {
+    public Pixel_21272789_SaldiviaMonsalve(int x, int y, int depth) {
         this.x = x;
         this.y = y;
         this.depth = depth;

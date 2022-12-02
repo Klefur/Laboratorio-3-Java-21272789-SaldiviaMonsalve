@@ -6,10 +6,10 @@ package Lab3;
  * @version 11.0.17
  * @author joaquin
  */
-public class Pixhex extends Pixel{
+public class Pixhex_21272789_SaldiviaMonsalve extends Pixel_21272789_SaldiviaMonsalve{
     private String hex;
 
-    public Pixhex(int x, int y,String hex, int depth) {
+    public Pixhex_21272789_SaldiviaMonsalve(int x, int y,String hex, int depth) {
         super(x, y, depth);
         this.hex = hex;
         setTipo("hex");

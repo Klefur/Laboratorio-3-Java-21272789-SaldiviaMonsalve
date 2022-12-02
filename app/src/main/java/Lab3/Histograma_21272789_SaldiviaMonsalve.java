@@ -8,13 +8,13 @@ import java.util.Arrays;
  * @author joaquin
  * @version 11.0.17
  */
-public class Histograma {
+public class Histograma_21272789_SaldiviaMonsalve {
     private int masRepetidoBit;
     private int[] masRepetidoRGB;
     private String masRepetidoHex;
     private int cont;
 
-    public Histograma() {
+    public Histograma_21272789_SaldiviaMonsalve() {
         cont = 0;
     }
 
@@ -54,14 +54,15 @@ public class Histograma {
      * obtiene el histograma de un Bitmap
      * @param pixs (ArrayList Pixel)
      */
-    public void histogramaBit(ArrayList<Pixel> pixs) {
-        Pixbit p, pAux;
+    public void histogramaBit(ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs) {
+        Pixbit_21272789_SaldiviaMonsalve p;
+        Pixbit_21272789_SaldiviaMonsalve pAux;
         int contAux;
         for (int i = 0; i < pixs.size(); i++) {
-            p = (Pixbit) pixs.get(i);
+            p = (Pixbit_21272789_SaldiviaMonsalve) pixs.get(i);
             contAux = 0;
             for (int j = i; j < pixs.size(); j++) { 
-                pAux = (Pixbit) pixs.get(j);
+                pAux = (Pixbit_21272789_SaldiviaMonsalve) pixs.get(j);
                 if (p.getBit() == pAux.getBit()) {
                     contAux++;
                 }
@@ -77,14 +78,15 @@ public class Histograma {
      * obtiene el histograma de un Pixmap
      * @param pixs (ArrayList Pixel)
      */
-    public void histogramaRGB(ArrayList<Pixel> pixs) {
-        Pixrgb p, pAux;
+    public void histogramaRGB(ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs) {
+        Pixrgb_21272789_SaldiviaMonsalve p;
+        Pixrgb_21272789_SaldiviaMonsalve pAux;
         int contAux;
         for (int i = 0; i < pixs.size(); i++) {
-            p = (Pixrgb) pixs.get(i);
+            p = (Pixrgb_21272789_SaldiviaMonsalve) pixs.get(i);
             contAux = 0;
             for (int j = i; j < pixs.size(); j++) { 
-                pAux = (Pixrgb) pixs.get(j);
+                pAux = (Pixrgb_21272789_SaldiviaMonsalve) pixs.get(j);
                 if (Arrays.toString(p.getRgb()).equals(Arrays.toString(pAux.getRgb()))) {
                     contAux++;
                 }
@@ -100,14 +102,15 @@ public class Histograma {
      * obtiene el histograma de un Hexmap
      * @param pixs (ArrayList Pixel)
      */
-    public void histogramaHex(ArrayList<Pixel> pixs) {
-        Pixhex p, pAux;
+    public void histogramaHex(ArrayList<Pixel_21272789_SaldiviaMonsalve> pixs) {
+        Pixhex_21272789_SaldiviaMonsalve p;
+        Pixhex_21272789_SaldiviaMonsalve pAux;
         int contAux;
         for (int i = 0; i < pixs.size(); i++) {
-            p = (Pixhex) pixs.get(i);
+            p = (Pixhex_21272789_SaldiviaMonsalve) pixs.get(i);
             contAux = 0;
             for (int j = i; j < pixs.size(); j++) {
-                pAux = (Pixhex) pixs.get(j);
+                pAux = (Pixhex_21272789_SaldiviaMonsalve) pixs.get(j);
                 if (p.getHex().equals(pAux.getHex())) {
                     contAux++;
                 }

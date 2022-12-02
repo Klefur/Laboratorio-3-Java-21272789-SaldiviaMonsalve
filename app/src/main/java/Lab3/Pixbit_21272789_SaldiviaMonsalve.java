@@ -5,10 +5,10 @@ package Lab3;
  * @author joaquin
  * @version 11.0.17
  */
-public class Pixbit extends Pixel{
+public class Pixbit_21272789_SaldiviaMonsalve extends Pixel_21272789_SaldiviaMonsalve{
     private int bit;
     
-    public Pixbit(int x, int y, int bit, int depth) {
+    public Pixbit_21272789_SaldiviaMonsalve(int x, int y, int bit, int depth) {
         super(x, y, depth);
         if (bit == 0) {
             this.bit = bit;
